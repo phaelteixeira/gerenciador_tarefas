@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Tarefa;
 
 class TarefaController extends Controller
 {
@@ -57,7 +58,13 @@ class TarefaController extends Controller
     public function store(Request $request)
     {
         $tarefas = new Tarefa();
-        $tarefas->nome = $request->input("nome");
+        $tarefas->titulo = $request->input("titulo");
+        $tarefas->usuario_responsavel = $request->input('usuario_responsavel');
+        $tarefas->privacidade = $request->input('privacidade');
+        $tarefas->descricao = $request->input('descricao');
+        $tarefas->tipo = $request->input('tipo');
+        $tarefas->status = $request->input('status');
+        $tarefas->data = $request->input('data');
         $tarefas->save();
         return redirect()->route('tarefas.index');
     }
@@ -65,48 +72,55 @@ class TarefaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Tarefa  $Tarefas
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show($id)
     {
-        //
+        $tarefas = Tarefa::find($id);
+        return view('nome da view',compact('tarefas'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Tarefa  $tarefas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit(Tarefa $tarefas)
     {
-        return view('categoria_editar', compact('categoria'));
+        return view('tarefas_editar', compact('tarefas'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Tarefa  $tarefas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Tarefas $tarefas)
     {
-        $categoria->nome = $request->input("nome");
-        $categoria->save();
-        return redirect()->route('categorias.index');
+        $tarefas->titulo = $request->input("titulo");
+        $tarefas->usuario_responsavel = $request->input('usuario_responsavel');
+        $tarefas->privacidade = $request->input('privacidade');
+        $tarefas->descricao = $request->input('descricao');
+        $tarefas->tipo = $request->input('tipo');
+        $tarefas->status = $request->input('status');
+        $tarefas->data = $request->input('data');
+        $tarefas->save();
+        return redirect()->route('tarefas.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Tarefa  $tarefas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Tarefa $tarefas)
     {
-        $categoria->delete();
-        return redirect()->route('categorias.index');
+        $tarefas->delete();
+        return redirect()->route('tarefas.index');
     }
 }

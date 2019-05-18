@@ -16,10 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/home',function(){
-    return view('menu_principal');
+    return view('layout');
 });
 
-Route::get('/categorias/restaurar/', 'CategoriaController@indexTrashed')->name('categorias.restaurar');
+Route::resource('tarefas','TarefaController');
+
+
+/*Route::get('/categorias/restaurar/', 'CategoriaController@indexTrashed')->name('categorias.restaurar');
 Route::get('/categorias/restaurar/{id}', 'CategoriaController@restore')->name('categorias.restore');
 Route::get('/categorias/shiftdelete/{id}',  'CategoriaController@forceDelete')->name('categorias.delete');
 Route::resource('categorias', 'CategoriaController');
@@ -30,4 +33,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return redirect(route('login'));
-});
+});*/
