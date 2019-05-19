@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Usuario;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UsuarioController extends Controller
+class TipoTarefaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::all();
-        return view('usuario_listar', compact('usuarios'));
+        $tipos = TipoTarefa::all();
+        return view('tipotarefa_listar',compact('tipos'));
     }
 
     /**
@@ -26,7 +25,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuario_cadastrar');
+        return view('tipotarefa_cadastrar');
     }
 
     /**
@@ -37,16 +36,10 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuarios = new Usuario();
-        $usuarios->nome = $request->input("nome");
-        $usuarios->sexo = $request->input("sexo");
-        $usuarios->nascimento = $request->input("nascimento");
-        $usuarios->email = $request->input("email");
-        $usuarios->telefone = $request->input("telefone");
-        $usuarios->login = $request->input("login");
-        $usuarios->senha = $request->input("senha");
-        $usuarios->save();
-        return redirect()->route('usuarios.index');
+        $tipos = new TipoTarefa();
+        $tipos->nome = $request->input('nome');
+        $tipos->save();
+        return redirect()->route('tipotarefa.index');
     }
 
     /**
@@ -68,7 +61,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        return view('usuario_editar',compact('usuarios'));
+        return view('tipotarefa_editar',compact('tipos'));
     }
 
     /**
@@ -79,17 +72,11 @@ class UsuarioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
-        $usuarios = Usuario::find($id);
-        $usuarios->nome = $request->input("nome");
-        $usuarios->sexo = $request->input("sexo");
-        $usuarios->nascimento = $request->input("nascimento");
-        $usuarios->email = $request->input("email");
-        $usuarios->telefone = $request->input("telefone");
-        $usuarios->login = $request->input("login");
-        $usuarios->senha = $request->input("senha");
-        $usuarios->save();
-        return redirect()->route('usuarios.index');
+    {
+        $tipos = TipoTarefa::find($id);
+        $tipos->nome = $request->input('nome');
+        $tipos->save();
+        return redirect()->route('tipotarefa.index');
     }
 
     /**
@@ -100,8 +87,8 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $usuarios = Usuario::find($id);
-        $usuarios->delete();
-        return view('usuarios.index',compact('usuarios'));
+        $tipos = TipoTarefa::find($id);
+        $tipos->delete();
+        return redirect()->route('tipotarefa.index');
     }
 }

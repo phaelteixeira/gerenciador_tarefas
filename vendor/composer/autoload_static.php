@@ -369,6 +369,7 @@ class ComposerStaticInit7ea2aee7ac326e7d46da6d4a8f8f3d5f
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\TarefaController' => __DIR__ . '/../..' . '/app/Http/Controllers/TarefaController.php',
+        'App\\Http\\Controllers\\TipoTarefaController' => __DIR__ . '/../..' . '/app/Http/Controllers/TipoTarefaController.php',
         'App\\Http\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuarioController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

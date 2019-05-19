@@ -7,27 +7,6 @@ use app\Tarefa;
 
 class TarefaController extends Controller
 {
-    public function __construct()
-        {
-            $this->middleware('auth');
-        }
-        
-    public function forceDelete($id){
-        $tarefas = Tarefa::onlyTrashed()->find($id);
-        $tarefas ->forceDelete();
-        return redirect()->route('tarefas.restaurar');
-    }
-
-    public function restore($id){
-        $tarefas = tarefa::onlyTrashed()->find($id);
-        $tarefas ->restore();
-        return redirect()->route('tarefas.index');
-    }
-
-    public function indexTrashed(){
-        $tarefas = Tarefa::onlyTrashed()->get();
-        return view('tarefas_restaurar', compact('tarefas'));
-    }
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +15,7 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefas = Tarefa::all();
-        return view('tarefas_listar', compact('tarefas'));
+        return view('tarefa_listar', compact('tarefas'));
     }
 
     /**
@@ -46,7 +25,7 @@ class TarefaController extends Controller
      */
     public function create()
     {
-        return view('tarefas_cadastrar');
+        return view('tarefa_cadastrar');
     }
 
     /**
@@ -66,7 +45,7 @@ class TarefaController extends Controller
         $tarefas->status = $request->input('status');
         $tarefas->data = $request->input('data');
         $tarefas->save();
-        return redirect()->route('tarefas.index');
+        return redirect()->route('tarefa.index');
     }
 
     /**
@@ -77,8 +56,7 @@ class TarefaController extends Controller
      */
     public function show($id)
     {
-        $tarefas = Tarefa::find($id);
-        return view('nome da view',compact('tarefas'));
+        //
     }
 
     /**
@@ -89,7 +67,7 @@ class TarefaController extends Controller
      */
     public function edit(Tarefa $tarefas)
     {
-        return view('tarefas_editar', compact('tarefas'));
+        return view('tarefa_editar', compact('tarefas'));
     }
 
     /**
@@ -99,8 +77,9 @@ class TarefaController extends Controller
      * @param  \App\Tarefa  $tarefas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tarefas $tarefas)
+    public function update(Request $request, $id)
     {
+        $tarefas = Tarefa::find($id);
         $tarefas->titulo = $request->input("titulo");
         $tarefas->usuario_responsavel = $request->input('usuario_responsavel');
         $tarefas->privacidade = $request->input('privacidade');
@@ -109,7 +88,7 @@ class TarefaController extends Controller
         $tarefas->status = $request->input('status');
         $tarefas->data = $request->input('data');
         $tarefas->save();
-        return redirect()->route('tarefas.index');
+        return redirect()->route('tarefa.index');
     }
 
     /**
@@ -118,9 +97,10 @@ class TarefaController extends Controller
      * @param  \App\Tarefa  $tarefas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tarefa $tarefas)
+    public function destroy($id)
     {
+        $tarefas = Tarefa::find($id);
         $tarefas->delete();
-        return redirect()->route('tarefas.index');
+        return redirect()->route('tarefa.index');
     }
 }
