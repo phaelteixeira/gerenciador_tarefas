@@ -12,19 +12,19 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading"><h3>Gerenciador de tarefas</h3> </div>
         <div class="list-group list-group-flush">
-            <a href="usuario_cadastrar" class="list-group-item list-group-item-action bg-light">Usuario</a>
-            <a href="tarefa_cadastrar" class="list-group-item list-group-item-action bg-light">Tarefas</a>
-            <a href="tipotarefa_cadastrar" class="list-group-item list-group-item-action bg-light">Tipo de tarefas</a>
+            <a href="{{route('usuario.create')}}" class="list-group-item list-group-item-action bg-light">Usuario</a>
+            <a href="{{route('tarefa.create')}}" class="list-group-item list-group-item-action bg-light">Tarefas</a>
+            <a href="{{route('tipotarefa.create')}}" class="list-group-item list-group-item-action bg-light">Tipo de tarefas</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
+        <div id="content">
 
-          <div class="container-fluid">
-               
-          </div>
+            @hasSection('body')
+                 @yield('body')
+            @endif
         </div>
         <!-- /#page-content-wrapper -->
 
