@@ -1,4 +1,4 @@
-@extends('layout',["current"=>"usuario"])
+@extends('layout',["current"=>"tipo"])
 
 @section('body')
 <div>

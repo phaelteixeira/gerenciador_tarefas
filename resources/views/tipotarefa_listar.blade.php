@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',["current"=>"tipo"])
 
 @section('body')
 <table class="table table-striped">

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',["current"=>"tarefa"])
 
 @section('body')
 <table class="table table-striped">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTarefaTable extends Migration
+class CreateTarefasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateTarefaTable extends Migration
      */
     public function up()
     {
-        Schema::create('tarefa', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('tarefas', function (Blueprint $table) {
+            $table->bigIncrements('id')->autoIncrement();
             $table->string('titulo');
             $table->string('usuario');
             $table->string('privacidade');
@@ -33,6 +33,6 @@ class CreateTarefaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarefa');
+        Schema::dropIfExists('tarefas');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',["current"=>"usuario"])
 
 <div>
 <form action="{{route('usuario.update',$usuarios)}}" method="POST">

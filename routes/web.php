@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
+Route::get("/",function(){
+    return view('pagina_inicial');
 });
 
 Route::resource('tarefa','TarefaController');
