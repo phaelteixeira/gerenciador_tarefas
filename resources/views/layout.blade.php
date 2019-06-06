@@ -80,7 +80,7 @@
 <body>
     
     <div class="sidenav">
-        <h3> Gerenciador de Tarefas</h3>
+        <h3><font color="green"> Gerenciador de Tarefas</font></h3>
         <button class="btn"><a href="/"> Pagina inicial </a></button>
         <button class="dropdown-btn">Tarefa 
             <i class="fa fa-caret-down"></i>

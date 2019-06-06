@@ -6,31 +6,31 @@
 @method('PUT')
   <div class="form-group">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" placeholder="Nome">
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
   </div>
   <div class="form-group">
       <label for="sexo">Sexo</label>
-      <input type="text" class="form-control" id="sexo" placeholder="sexo">
+      <input type="text" class="form-control" id="sexo" name="sexo" placeholder="sexo">
   </div>
   <div class="form-group">
       <label for="data">Data de nascimento</label>
-      <input type="text" class="form-control" id="data" placeholder="data">
+      <input type="text" class="form-control" id="data" name="data" placeholder="data">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Endereço de email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+    <label for="email">Endereço de email</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="email">
   </div>
   <div class="form-group">
       <label for="telefone">Telefone</label>
-      <input type="text" class="form-control" id="telefone" placeholder="telefone">
+      <input type="text" class="form-control" id="telefone" name="telefone" placeholder="telefone">
   </div>
   <div class="form-group">
       <label for="login">Login</label>
-      <input type="text" class="form-control" id="login" placeholder="login">
+      <input type="text" class="form-control" id="login" name="login" placeholder="login">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    <label for="senha">Senha</label>
+    <input type="password" class="form-control" id="senha" name="senha" placeholder="senha">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

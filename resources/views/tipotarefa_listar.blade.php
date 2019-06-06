@@ -9,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($usuarios as $user)
+    @foreach($tipos as $tipo)
         <tr>       
-            <td>{{$user->id}}</td>
-            <td>{{$user->nome}}</td>
+            <td>{{$tipo->id}}</td>
+            <td>{{$tipo->nome}}</td>
             <td>
             <form action = "{{route('tipotarefa.destroy', $tipos)}}" method = "POST">
                 @csrf

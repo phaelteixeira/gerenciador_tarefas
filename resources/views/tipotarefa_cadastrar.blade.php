@@ -6,7 +6,7 @@
 @csrf
   <div class="form-group">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" placeholder="Nome">
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
