@@ -13,8 +13,8 @@
         <input type="text" class="form-control" id="sexo" name="sexo" placeholder="sexo">
     </div>
     <div class="form-group">
-        <label for="nacimento">Data de nascimento</label>
-        <input type="text" class="form-control" id="nascimento" name="nascimento" placeholder="nascimento">
+        <label for="data">Data de nascimento</label>
+        <input type="text" class="form-control" id="data" name="data" placeholder="data">
     </div>
     <div class="form-group">
       <label for="email">Endereço de email</label>
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group">
       <label for="senha">Senha</label>
-      <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+      <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha">
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>

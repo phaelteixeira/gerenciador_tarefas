@@ -40,13 +40,13 @@ class UsuarioController extends Controller
         $usuarios = new Usuario();
         $usuarios->nome = $request->input("nome");
         $usuarios->sexo = $request->input("sexo");
-        $usuarios->nascimento = $request->input("nascimento");
+        $usuarios->data = $request->input("data");
         $usuarios->email = $request->input("email");
         $usuarios->telefone = $request->input("telefone");
         $usuarios->login = $request->input("login");
         $usuarios->senha = $request->input("senha");
         $usuarios->save();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -83,13 +83,13 @@ class UsuarioController extends Controller
         $usuarios = Usuario::find($id);
         $usuarios->nome = $request->input("nome");
         $usuarios->sexo = $request->input("sexo");
-        $usuarios->nascimento = $request->input("nascimento");
+        $usuarios->data = $request->input("data");
         $usuarios->email = $request->input("email");
         $usuarios->telefone = $request->input("telefone");
         $usuarios->login = $request->input("login");
         $usuarios->senha = $request->input("senha");
         $usuarios->save();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -102,6 +102,6 @@ class UsuarioController extends Controller
     {
         $usuarios = Usuario::find($id);
         $usuarios->delete();
-        return view('usuarios.index',compact('usuarios'));
+        return redirect()->route('usuario.index');
     }
 }

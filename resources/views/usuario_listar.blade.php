@@ -26,9 +26,9 @@
             <td>{{$user->login}}</td>
             <td>{{$user->senha}}</td>
             <td>
-            <form action = "{{route('usuario.destroy', $usuarios)}}" method = "POST">
+            <form action = "{{route('usuario.destroy', $user)}}" method = "POST">
                 @csrf
-                <a class = "btn btn-success" href="{{route('usuario.edit', $usuarios)}}">Editar</a>
+                <a class = "btn btn-success" href="{{route('usuario.edit', $user)}}">Editar</a>
                 @method('DELETE')
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  

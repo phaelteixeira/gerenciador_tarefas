@@ -26,9 +26,9 @@
             <td>{{$t->status}}</td>
             <td>{{$t->conclusao}}</td>
             <td>
-            <form action = "{{route('tarefa.destroy', $tarefas)}}" method = "POST">
+            <form action = "{{route('tarefa.destroy', $t)}}" method = "POST">
                 @csrf
-                <a class = "btn btn-success" href="{{route('tarefa.edit', $tarefas)}}">Editar</a>
+                <a class = "btn btn-success" href="{{route('tarefa.edit', $t)}}">Editar</a>
                 @method('DELETE')
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  

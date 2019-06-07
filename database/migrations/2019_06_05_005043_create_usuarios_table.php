@@ -16,8 +16,8 @@ class CreateUsuariosTable extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
             $table->string('nome');
-            $table->char('sexo');
-            $table->date('nascimento');
+            $table->string('sexo');
+            $table->string('data');
             $table->string('email');
             $table->string('telefone');
             $table->string('login');

@@ -30,7 +30,7 @@
   </div>
   <div class="form-group">
     <label for="conclusao">Data conclusao</label>
-    <input type="date" class="form-control" id="conclusao" name="conclusao" placeholder="conclusao">
+    <input type="text" class="form-control" id="conclusao" name="conclusao" placeholder="conclusao">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

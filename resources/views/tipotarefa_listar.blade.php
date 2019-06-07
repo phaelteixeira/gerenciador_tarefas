@@ -14,9 +14,9 @@
             <td>{{$tipo->id}}</td>
             <td>{{$tipo->nome}}</td>
             <td>
-            <form action = "{{route('tipotarefa.destroy', $tipos)}}" method = "POST">
+            <form action = "{{route('tipotarefa.destroy', $tipo)}}" method = "POST">
                 @csrf
-                <a class = "btn btn-success" href="{{route('tipotarefa.edit', $tipos)}}">Editar</a>
+                <a class = "btn btn-success" href="{{route('tipotarefa.edit', $tipo)}}">Editar</a>
                 @method('DELETE')
                 <button type = "submit" class = "btn btn-danger">Excluir</button>
             </form>  

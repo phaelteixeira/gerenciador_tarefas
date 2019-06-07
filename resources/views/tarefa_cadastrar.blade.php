@@ -9,8 +9,8 @@
       <input type="text" class="form-control" id="titulo" name="titulo" placeholder="titulo">
   </div>
   <div class="form-group">
-      <label for="usuario">Usuario Responsavel</label>
-      <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario">
+      <label for="usuario_responsavel">Usuario Responsavel</label>
+      <input type="text" class="form-control" id="usuario_responsavel" name="usuario_responsavel" placeholder="usuario_responsavel">
   </div>
   <div class="form-group">
       <label for="privacidade">Privacidade</label>
@@ -29,8 +29,8 @@
     <input type="text" class="form-control" id="status" name="status" placeholder="status">
   </div>
   <div class="form-group">
-    <label for="conclusao">Data conclusao</label>
-    <input type="date" class="form-control" id="conclusao" name="conclusao" placeholder="conclusao">
+    <label for="data">Data conclusao</label>
+    <input type="text" class="form-control" id="data" name="data" placeholder="data">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
